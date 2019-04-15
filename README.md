@@ -8,7 +8,7 @@ Coverage.jl
 
 **"Take Julia code coverage and memory allocation results, do useful things with them"**
 
-**Code coverage**: Julia can track how many times, if any, each line of your code is run. This is useful for measuring how much of your code base your tests actually test, and can reveal the parts of your code that are not tested and might be hiding a bug. You can use Coverage.jl to summarize the results of this tracking, or to send them to a service like [Coveralls.io](http://coveralls.io) or [Codecov.io](https://codecov.io/github/JuliaCI).
+**Code coverage**: Julia can track how many times, if any, each line of your code is run. This is useful for measuring how much of your code base your tests actually test, and can reveal the parts of your code that are not tested and might be hiding a bug. You can use Coverage.jl to summarize the results of this tracking, or to send them to a service like [Coveralls.io](https://coveralls.io) or [Codecov.io](https://codecov.io/github/JuliaCI).
 
 **Memory allocation**: Julia can track how much memory is allocated by each line of your code. This can reveal problems like type instability, or operations that you might have thought were cheap (in terms of memory allocated) but aren't (i.e. accidental copying).
 
@@ -41,7 +41,7 @@ coverage = merge_coverage_counts(coverage, filter!(
 # Get total coverage for all Julia files
 covered_lines, total_lines = get_summary(coverage)
 # Or process a single file
-@show get_summary(process_file("src/MyPkg.jl"))
+@show get_summary(process_file(joinpath("src", "MyPkg.jl")))
 ```
 The fraction of total coverage is equal to `covered_lines/total_lines`.
 
